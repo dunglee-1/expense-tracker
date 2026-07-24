@@ -7,9 +7,7 @@ function Register() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,39 +21,19 @@ function Register() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: '50px auto' }}>
-      <h2>Đăng ký</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          name="name"
-          placeholder="Họ tên"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          style={{ display: 'block', width: '100%', marginBottom: 10, padding: 8 }}
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          style={{ display: 'block', width: '100%', marginBottom: 10, padding: 8 }}
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Mật khẩu"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          style={{ display: 'block', width: '100%', marginBottom: 10, padding: 8 }}
-        />
-        <button type="submit" style={{ width: '100%', padding: 10 }}>Đăng ký</button>
-      </form>
-      <p>Đã có tài khoản? <Link to="/login">Đăng nhập</Link></p>
+    <div className="auth-page">
+      <div className="auth-card">
+        <div className="auth-eyebrow">Expense Tracker</div>
+        <h2 className="auth-title">Đăng ký</h2>
+        {error && <div className="auth-error">{error}</div>}
+        <form onSubmit={handleSubmit}>
+          <input className="form-field" name="name" placeholder="Họ tên" value={formData.name} onChange={handleChange} required />
+          <input className="form-field" name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+          <input className="form-field" name="password" type="password" placeholder="Mật khẩu" value={formData.password} onChange={handleChange} required />
+          <button type="submit" className="btn btn-primary">Đăng ký</button>
+        </form>
+        <p className="auth-switch">Đã có tài khoản? <Link to="/login">Đăng nhập</Link></p>
+      </div>
     </div>
   );
 }
