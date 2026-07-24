@@ -225,3 +225,63 @@
   font-size: 14px;
   padding: 20px 0;
 }
+
+.summary-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-box {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.summary-value.income {
+  color: var(--income);
+}
+
+.summary-value.expense {
+  color: var(--expense);
+}
+
+.chart-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.toggle-btn {
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+
+.toggle-btn.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.toggle-btn:hover:not(.active) {
+  border-color: #3a4453;
+  color: var(--text);
+}
